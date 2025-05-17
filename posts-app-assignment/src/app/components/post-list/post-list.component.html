@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1 class="heading">Posts</h1>
+  </div>
+</div>
+<div class="post-grid">
+  <div *ngFor="let post of posts" class="card" (click)="viewPost(post.id)">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body | slice:0:100 }}</p>
+  </div>
+</div>
+
+<button *ngIf="hasMore" (click)="loadPosts()">Load More</button>
+
+
+<div *ngIf="errorMessage" class="error-msg">
+  {{ errorMessage }}
+</div>

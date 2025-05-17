@@ -1,0 +1,95 @@
+.modal-background {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  width: 90%;       /* Mobile default */
+  max-height: 90vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Tablet size */
+@media (min-width: 600px) {
+  .modal-content {
+    width: 80%;
+    max-width: 600px;
+  }
+}
+
+/* Desktop size */
+@media (min-width: 1024px) {
+  .modal-content {
+    width: 70%;
+    max-width: 800px;
+  }
+}
+
+.responsive-layout {
+  display: flex;
+  flex-direction: column;  /* stacked by default (mobile/tablet) */
+  gap: 20px;
+}
+
+
+.post-detail,
+.post-comments {
+  flex: 1 1 100%;
+}
+
+/* Desktop: side-by-side */
+@media (min-width: 1024px) {
+  .responsive-layout {
+    flex-direction: row;
+  }
+
+  .post-detail,
+  .post-comments {
+    flex: 1 1 45%;   /* side by side with some gap */
+  }
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.close-button {
+  align-self: flex-end;
+}
+
+.modal-header {
+  text-align: right;
+}
+
+.modal-footer {
+  text-align: right;
+}
+
+button{
+  padding: 6px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #bbbfc6;
+  color: #070606;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6a737c;
+}

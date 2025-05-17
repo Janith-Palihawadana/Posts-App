@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PostService} from "../../services/post.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-post-list',
@@ -12,8 +13,14 @@ export class PostListComponent implements OnInit {
   page = 0;
   pageSize = 10;
   errorMessage: string = '';
+  modalVisible = false;
+  selectedPost: any;
+  postComments :any[] = [];
+  post: any;
 
-  constructor(private postService: PostService) {
+  constructor(private postService: PostService,
+  private router: Router) {
+    this.getPosts();
   }
 
   ngOnInit() {
@@ -26,9 +33,11 @@ export class PostListComponent implements OnInit {
         console.log(response);
         this.posts = response.result;
         this.hasMore = response.next;
+        this.errorMessage = '';
       },
       error: (error: any) => {
         console.error('Error fetching posts:', error);
+        this.errorMessage = 'Failed to load posts. Please try again later.';
       }
     });
   }
@@ -41,6 +50,28 @@ export class PostListComponent implements OnInit {
   }
 
   viewPost(id: number): void {
-    alert(`Clicked post`);
+    this.postService.getPost(id).subscribe({
+      next: (response: any) => {
+        this.selectedPost = response;
+        this.postService.getComments(id).subscribe({
+          next: (commentsResponse: any) => {
+            this.postComments = commentsResponse;
+
+            this.modalVisible = true;
+            this.errorMessage = '';
+          },
+          error: (error: any) => {
+            console.error('Error fetching comments:', error);
+            this.errorMessage = 'Failed to load posts. Please try again later.';
+
+          }
+        });
+      },
+      error: (error: any) => {
+        console.error('Error fetching post:', error);
+        this.errorMessage = 'Failed to load posts. Please try again later.';
+      }
+    });
   }
+
 }

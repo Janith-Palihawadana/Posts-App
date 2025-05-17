@@ -1,0 +1,30 @@
+<div class="modal-background">
+  <div class="modal-content">
+    <div class="modal-header">
+    </div>
+
+    <div class="modal-body responsive-layout">
+      <div class="post-detail">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <p><strong>Tags:</strong> {{ post.tags }}</p>
+        <p><strong>Date:</strong> {{ post.created_at | date }}</p>
+      </div>
+
+      <div class="post-comments">
+        <h4>Comments</h4>
+        <div *ngIf="!comments.length">
+          <p>No comments available.</p>
+        </div>
+        <div *ngFor="let comment of comments" class="comment">
+          <strong>{{ comment.author }} : </strong>
+          <p>{{ comment.comment }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button (click)="close.emit()">Close</button>
+    </div>
+  </div>
+</div>

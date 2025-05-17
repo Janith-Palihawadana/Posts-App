@@ -1,0 +1,8 @@
+[
+  { "id": 1, "postId": 1, "author": "Alice", "email": "alice@example.com", "comment": "Great post!" },
+  { "id": 2, "postId": 1, "author": "Bob", "email": "bob@example.com", "comment": "Thanks for sharing." },
+  { "id": 3, "postId": 1, "author": "Roy", "email": "bob@example.com", "comment": "Thanks for sharing." },
+  { "id": 4, "postId": 2, "author": "Carol", "email": "carol@example.com", "comment": "Interesting read." },
+  { "id": 5, "postId": 3, "author": "Carol", "email": "carol@example.com", "comment": "Interesting read." },
+  { "id": 6, "postId": 3, "author": "Rob", "email": "carol@example.com", "comment": "Interesting read." }
+]

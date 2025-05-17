@@ -16,3 +16,10 @@
 <div *ngIf="errorMessage" class="error-msg">
   {{ errorMessage }}
 </div>
+
+<app-post-detail
+  *ngIf="modalVisible"
+  [post]="selectedPost"
+  [comments]="postComments"
+  (close)="modalVisible = false">
+</app-post-detail>

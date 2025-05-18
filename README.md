@@ -16,18 +16,19 @@ An Angular application that displays a list of posts from a mock API. Users can 
 src/
 └── app/
 ├── components/
-│ └── post-list/
-│ ├── post-list.component.ts
-│ ├── post-list.component.html
-│ ├── post-list.component.css
-| |── post-details/
-│ ├── post-details.component.ts
-│ ├── post-details.component.html
-│ ├── post-details.component.css
+│   └── post-list/
+│       ├── post-list.component.ts
+│       ├── post-list.component.html
+│       ├── post-list.component.css
+│   └── post-details/
+│       ├── post-details.component.ts
+│       ├── post-details.component.html
+│       ├── post-details.component.css
 ├── services/
-│ └── post.service.ts
+│   └── post.service.ts
 ├── app-routing.module.ts
 └── app.module.ts
+
 
 ## 🧩 Components
 
@@ -54,6 +55,38 @@ src/
 
 ---
 
+## 🧪 Unit Testing
+We use Angular's default testing setup with Karma.
+
+### Run all unit tests
+
+ng test
+
+#### This command will:
+
+Launch a browser window
+
+Run all unit tests
+
+Watch for file changes and re-run tests automatically
+
+### Test Files Location
+Test files are located next to the component files and end with .spec.ts, for example:
+
+post-list.component.spec.ts
+
+post-detail.component.spec.ts
+
+### These files test:
+
+Component creation
+
+Service interactions
+
+Error handling
+
+UI behavior
+
 ## ✅ TODO / Improvements
 Add search and filter options
 
@@ -61,4 +94,4 @@ Implement infinite scroll
 
 Add loading spinners and skeleton loaders
 
-Add unit and integration tests
+Add integration tests

@@ -3,6 +3,7 @@
   gap: 16px;
   grid-template-columns: repeat(1, 1fr); /* Default: Mobile - 1 column */
   padding: 1rem;
+  font-family: Arial, sans-serif;
 }
 
 .card {
@@ -49,6 +50,7 @@ button:hover {
 
 .heading {
   margin-left: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .error-msg {

@@ -12,7 +12,7 @@
   background: white;
   padding: 20px;
   border-radius: 6px;
-  width: 90%;       /* Mobile default */
+  width: 90%;
   max-height: 90vh;
   overflow-y: auto;
   box-sizing: border-box;
@@ -36,10 +36,9 @@
 
 .responsive-layout {
   display: flex;
-  flex-direction: column;  /* stacked by default (mobile/tablet) */
+  flex-direction: column;
   gap: 20px;
 }
-
 
 .post-detail,
 .post-comments {
@@ -62,9 +61,9 @@
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-bottom: 5px;
-  padding-bottom: 5px;
   border-bottom: 1px solid #eee;
+  font-family: Arial, sans-serif;
+  color: #555;
 }
 
 .close-button {
@@ -77,6 +76,11 @@
 
 .modal-footer {
   text-align: right;
+  margin-top: 22px;
+}
+
+.modal-footer button {
+  font-family: Arial, sans-serif;
 }
 
 button{
@@ -92,4 +96,28 @@ button{
 
 button:hover {
   background-color: #6a737c;
+}
+
+.post-detail h2{
+  font-family: Arial, sans-serif;
+}
+
+.post-detail p {
+  font-family: Georgia, serif;
+}
+
+.comment h3 h4{
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.post-detail p {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.post-comments h3 {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 0px;
 }

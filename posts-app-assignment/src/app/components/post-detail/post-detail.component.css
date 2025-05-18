@@ -121,3 +121,8 @@ button:hover {
   color: #333;
   margin-bottom: 0px;
 }
+
+
+.no-comment p{
+  font-family: Arial, sans-serif;
+}
